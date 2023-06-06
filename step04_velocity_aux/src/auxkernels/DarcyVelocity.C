@@ -21,6 +21,7 @@ DarcyVelocity::validParams()
   // Add a "coupling paramater" to get a variable from the input file.
   params.addRequiredCoupledVar("pressure", "The pressure field.");
 
+	std::cout<<"INFO: Called "<<__FILE__<<"\n"<<__func__<<std::endl;
   return params;
 }
 
@@ -38,6 +39,8 @@ DarcyVelocity::DarcyVelocity(const InputParameters & parameters)
     // Only AuxKernels operating on Elemental Auxiliary Variables can do this
     _viscosity(getADMaterialProperty<Real>("viscosity"))
 {
+	std::cout<<"INFO: Called "<<__FILE__<<"\n"<<__func__<<std::endl;
+
 }
 
 RealVectorValue

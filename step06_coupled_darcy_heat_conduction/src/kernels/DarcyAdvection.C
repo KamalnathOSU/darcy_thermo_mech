@@ -16,6 +16,7 @@ DarcyAdvection::validParams()
 {
   InputParameters params = ADKernelValue::validParams();
   params.addRequiredCoupledVar("pressure", "The variable representing the pressure.");
+	std::cout<<"INFO: Called "<<__FILE__<<"\n"<<__func__<<std::endl;
   return params;
 }
 
@@ -30,6 +31,7 @@ DarcyAdvection::DarcyAdvection(const InputParameters & parameters)
     _density(getADMaterialProperty<Real>("density")),
     _specific_heat(getADMaterialProperty<Real>("specific_heat"))
 {
+	std::cout<<"INFO: Called "<<__FILE__<<"\n"<<__func__<<std::endl;
 }
 
 ADReal

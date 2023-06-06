@@ -17,6 +17,7 @@ DarcyPressure::validParams()
   InputParameters params = ADKernel::validParams();
   params.addClassDescription("Compute the diffusion term for Darcy pressure ($p$) equation: "
                              "$-\\nabla \\cdot \\frac{\\mathbf{K}}{\\mu} \\nabla p = 0$");
+	std::cout<<"INFO: Called "<<__FILE__<<"\n"<<__func__<<std::endl;
   return params;
 }
 
@@ -25,6 +26,7 @@ DarcyPressure::DarcyPressure(const InputParameters & parameters)
     _permeability(getADMaterialProperty<Real>("permeability")),
     _viscosity(getADMaterialProperty<Real>("viscosity"))
 {
+	std::cout<<"INFO: Called "<<__FILE__<<"\n"<<__func__<<std::endl;
 }
 
 ADReal

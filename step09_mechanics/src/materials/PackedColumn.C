@@ -102,6 +102,7 @@ PackedColumn::validParams()
                             "The name of a file containing solid thermal expansion coefficient "
                             "(1/K) as a function of temperature "
                             "(C); if provided the constant value is ignored.");
+	std::cout<<"INFO: Called "<<__FILE__<<"\n"<<__func__<<std::endl;
   return params;
 }
 
@@ -151,6 +152,7 @@ PackedColumn::PackedColumn(const InputParameters & parameters)
   _use_solid_rho_interp = initInputData("solid_density_file", _solid_rho_interpolation);
   _use_solid_cp_interp = initInputData("solid_specific_heat_file", _solid_cp_interpolation);
   _use_solid_cte_interp = initInputData("solid_thermal_expansion_file", _solid_cte_interpolation);
+	std::cout<<"INFO: Called "<<__FILE__<<"\n"<<__func__<<std::endl;
 }
 
 void

@@ -22,24 +22,29 @@ DarcyThermoMechApp::validParams()
 
   params.set<bool>("automatic_automatic_scaling") = false;
   params.set<bool>("use_legacy_material_output") = false;
+	std::cout<<"INFO: Called "<<__FILE__<<"\n"<<__func__<<std::endl;
 
   return params;
 }
 
 DarcyThermoMechApp::DarcyThermoMechApp(InputParameters parameters) : MooseApp(parameters)
 {
+	std::cout<<"INFO: Called "<<__FILE__<<"\n"<<__func__<<std::endl;
   DarcyThermoMechApp::registerAll(_factory, _action_factory, _syntax);
 }
 
 void
 DarcyThermoMechApp::registerApps()
 {
+	std::cout<<"INFO: Called "<<__FILE__<<"\n"<<__func__<<std::endl;
   registerApp(DarcyThermoMechApp);
 }
 
 void
 DarcyThermoMechApp::registerAll(Factory & factory, ActionFactory & action_factory, Syntax & syntax)
 {
+	std::cout<<"INFO: Called "<<__FILE__<<"\n"<<__func__<<std::endl;
+		
   Registry::registerObjectsTo(factory, {"DarcyThermoMechApp"});
   Registry::registerActionsTo(action_factory, {"DarcyThermoMechApp"});
   ModulesApp::registerAll(factory, action_factory, syntax);

@@ -24,12 +24,15 @@ main(int argc, char * argv[])
   // Initialize MPI, solvers and MOOSE
   MooseInit init(argc, argv);
 
+	std::cout<<"INFO: Called "<<__func__<<": after init \n";
   // Register this application's MooseApp and any it depends on
   DarcyThermoMechApp::registerApps();
 
+	std::cout<<"INFO: Called "<<__func__<<": before app creation \n";
   // The unique_ptr will automatically free memory allocated by the AppFactory.
   std::shared_ptr<MooseApp> app = AppFactory::createAppShared("DarcyThermoMechApp", argc, argv);
 
+	std::cout<<"INFO: Called "<<__func__<<": before app run \n";
   // Execute the application
   app->run();
 

@@ -16,6 +16,7 @@ HeatConductionOutflow::validParams()
 {
   InputParameters params = ADIntegratedBC::validParams();
   params.addClassDescription("Compute the outflow boundary condition.");
+	std::cout<<"INFO: Called "<<__FILE__<<"\n"<<__func__<<std::endl;
   return params;
 }
 
@@ -23,6 +24,7 @@ HeatConductionOutflow::HeatConductionOutflow(const InputParameters & parameters)
   : ADIntegratedBC(parameters),
     _thermal_conductivity(getADMaterialProperty<Real>("thermal_conductivity"))
 {
+	std::cout<<"INFO: Called "<<__FILE__<<"\n"<<__func__<<std::endl;
 }
 
 ADReal
